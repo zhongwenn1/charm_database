@@ -7,4 +7,3 @@ docutils
 django-mdeditor
 markdown
 Pygments
-django-model-utils
