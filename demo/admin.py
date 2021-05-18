@@ -198,3 +198,49 @@ class EmployeAdmin(ImportExportActionModelAdmin,AjaxAdmin):
         messages.add_message(request, messages.SUCCESS, '复制成功，复制了{}个员工。'.format(len(ids)))
 
     make_copy.short_description = '复制员工'
+
+
+@admin.register(Acallnote)
+class AcallnoteAdmin(admin.ModelAdmin):
+    list_display = ('family_ID',
+                    'ARCH_ID',
+                    'call_date',
+                    'call_note',
+                    'type',
+                    'initial',
+                    )
+    search_fields = ('ARCH_ID',
+                     )
+    list_filter=(
+                 'call_date',
+                 'initial',
+
+                 )
+    fieldsets = [(None, {'fields': ['family_ID', 'ARCH_ID']}),
+                 (u'Other Information', {
+                     'classes': ('12',),
+                     'fields': ['call_date', 'call_note', 'type', 'initial']})]
+
+@admin.register(archtrack)
+class archtrackAdmin(admin.ModelAdmin):
+    list_display = ( 'arch_id',
+                     'child_id',
+                     'birthday',
+                     'date_recent',
+                     'echoreconsent',
+                     'mom_firstname',
+                     'mom_lastname',
+                     'echo_id',
+                     'echo_pin',
+                    )
+    search_fields = ('arch_id',
+                     'child_id',
+                     'mom_firstname',
+                     'mom_lastname',
+                     'echo_id',
+                     )
+    list_filter = (
+        'echoreconsent',
+        'age',
+        'birthday',
+    )
