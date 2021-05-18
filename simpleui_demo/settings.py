@@ -158,7 +158,7 @@ SIMPLEUI_INDEX = 'https://www.88cto.com'
 # SIMPLEUI_LOGIN_PARTICLES = False
 
 # 让simpleui 不要收集相关信息
-SIMPLEUI_ANALYSIS = True
+SIMPLEUI_ANALYSIS = False
 
 # 自定义simpleui 菜单
 SIMPLEUI_CONFIG = {

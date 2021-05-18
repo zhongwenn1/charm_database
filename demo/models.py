@@ -120,7 +120,7 @@ class archtrack(models.Model):
     es_age = models.BigIntegerField(db_column='ES_age', blank=True, null=True,
                                verbose_name=u"Child age estimated from due date")  # Field name made lowercase.
     checkess = Choices('Unknown', 'YES', 'NO')
-    echoreconsent = models.CharField(db_column='ECHOreconsent',choices=checkess, max_length=5, blank=True,
+    echoreconsent = models.CharField(db_column='ECHOreconsent',choices=checkess, max_length=10, blank=True,
                                      null=True, verbose_name=u"ECHO Reconsent")  # Field name made lowercase.
     new_reconsent_date = models.DateField(db_column='new_reconsent_date',blank=True, null=True, verbose_name=u"ECHO Reconsent Date")
     reconsent_version = models.CharField(db_column='reconsent_version',blank=True, null=True, max_length=5,
