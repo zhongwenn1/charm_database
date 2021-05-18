@@ -307,3 +307,44 @@ class archtrack(models.Model):
         managed = True
         db_table = 'arch_survey_track'
         verbose_name_plural = 'ARCH Survey Track'
+
+
+class archallcontact(models.Model):
+   row_num = models.AutoField(db_column='row_num', primary_key=True)
+   ARCHID = models.CharField(max_length=10, db_column='ARCHID', blank=False, null=False,verbose_name=u"ARCH ID")
+   currdate = models.DateField( db_column='currdate', blank=False,verbose_name=u"Date of contact information" )
+   address = models.TextField( db_column='address', blank=True, null=True,verbose_name=u"Address" )
+   choice_social = Choices('Yes', 'No')
+   move_home = models.CharField(db_column='move_home',choices=choice_social, max_length=10, blank=True, null=True,
+                                verbose_name=u"Plan to move home")
+   move_home_address = models.TextField(db_column='move_home_address',blank=True, null=True, verbose_name=u"New address plan to move")
+   move_home_date = models.DateField(db_column='move_home_date',blank=True, null=True, verbose_name=u"Date of moving to new home")
+   phone_num = models.CharField(max_length=200, db_column='phone_num', blank=True, null=True,verbose_name=u"Primary Phone Number")
+   text_permission=models.CharField(max_length=5, db_column='text_permission', blank=True, null=True,verbose_name=u"Permission to text this number")
+   text_num = models.CharField(max_length=200, db_column='text_num', blank=True, null=True,verbose_name=u"Phone Number for texting")
+   other_phone = models.CharField(max_length=200, db_column='other_phone', blank=True, null=True,verbose_name=u"Additional Phone Number")
+   other_text_permission = models.CharField(max_length=5, db_column='other_text_permission', blank=True, null=True,verbose_name=u"Permission to text this number")
+   email=models.CharField( max_length=150,db_column='email', blank=True, null=True,verbose_name=u"Email Address" )
+   ad_email=models.CharField( max_length=150,db_column='ad_email', blank=True, null=True,verbose_name=u"Additional email Address" )
+   prefer_c = Choices('Text', 'Email', 'call', 'Any of the above!')
+   prefer_contact = models.CharField(db_column='prefer_contact',choices=prefer_c, max_length=20, blank=True, null=True,
+                                     verbose_name=u"Preferred contact method")
+   social_media = models.CharField(db_column='social_media',choices=choice_social, max_length=10, blank=True, null=True,
+                                   verbose_name=u"Follow social media")
+   facebook=models.CharField( max_length=150,db_column='facebook', blank=True, null=True,verbose_name=u"Facebook" )
+   Instagram=models.CharField( max_length=150,db_column='Instagram', blank=True, null=True,verbose_name=u"Instagram" )
+   Twitter=models.CharField( max_length=150,db_column='Twitter', blank=True, null=True,verbose_name=u"Twitter" )
+   contact_a=models.TextField( db_column='contact_a', blank=True, null=True,verbose_name=u"Alternate contact name" )
+   contact_aphone=models.CharField(max_length=200, db_column='contact_aphone', blank=True, null=True,verbose_name=u"Phone number of alternate contact")
+   contact_aemail=models.CharField(max_length=80, db_column='contact_aemail', blank=True, null=True,verbose_name=u"Email of alternate contact")
+   contact_aaddress=models.CharField(max_length=200, db_column='contact_aaddress', blank=True, null=True,verbose_name=u"Mailing address of alternate contact")
+   contact_b = models.TextField( db_column='contact_b', blank=True, null=True,verbose_name=u"Other alternate contact name" )
+   contact_bphone = models.CharField(max_length=200, db_column='contact_bphone', blank=True, null=True,verbose_name=u"Phone number of other alternate contact")
+   source= models.CharField(max_length=30, db_column='source', blank=True, null=True,verbose_name=u"Source of the contact information")
+   initial = models.CharField(max_length=10, db_column='initial', blank=True, null=True,verbose_name=u"Please enter your initial")
+   qualtrics_id = models.CharField(max_length=50, db_column='qualtrics_id', blank=True, null=True)
+
+   class Meta:
+        managed = True
+        db_table = 'arch_all_contact'
+        verbose_name_plural='ARCH All Contact Information'

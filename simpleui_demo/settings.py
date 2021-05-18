@@ -163,74 +163,78 @@ SIMPLEUI_ANALYSIS = True
 # 自定义simpleui 菜单
 SIMPLEUI_CONFIG = {
     # 在自定义菜单的基础上保留系统模块
-    'system_keep': True,
-    'menus': [{
-        'name': 'Simpleui',
-        'icon': 'fas fa-code',
-        'url': 'https://gitee.com/tompeppa/simpleui'
-    }, {
-        # 自2021.02.01+ 支持多级菜单，models 为子菜单名，理论上可以无限级
-        'name': '多级菜单测试',
-        'icon': 'fa fa-file',
-        'models': [{
-            'name': 'Baidu',
-            'icon': 'far fa-surprise',
-            'models': [
-                {
-                    'name': '爱奇艺',
-                    'models': [
-                        {'name': '视频直播'},
-
-                        {'name': 'TV直播',
-                         'models': [
-                             {'name': '视频直播'}
-                         ]},
-
-                    ]
-                }, {
-                    'name': '百度问答'
-                }
-            ]
-        }, {
-            'name': 'Google',
-            'icon': 'far fa-surprise',
-            'models': [{
-                'name': 'Youtube',
-                'icon': 'far fa-surprise'
-            }, {
-                'name': 'Gmail',
-                'icon': 'far fa-surprise'
-            }, {
-                'name': 'Search',
-                'url': 'https://www.google.com'
-            }]
-        }]
-    }, {
-        'app': 'auth',
-        'name': '权限认证',
-        'icon': 'fas fa-user-shield',
-        'models': [{
-            'name': '用户',
-            'icon': 'fa fa-user',
-            'url': 'auth/user/'
-        }]
-    }, {
-        'name': '测试',
-        'icon': 'fa fa-file',
-        'models': [{
-            'name': 'Baidu',
-            'url': 'http://baidu.com',
-            'icon': 'far fa-surprise'
-        }, {
-            'name': '内网穿透',
-            'url': 'https://www.wezoz.com',
-            'icon': 'fab fa-github'
-        }, {
-            'name': '内网穿透',
-            'url': 'https://www.wezoz.com',
-            'icon': 'fab fa-github'
-        }]
-    }]
+    # 'system_keep': True,
+    # 'menus': [{
+    #     'name': 'Simpleui',
+    #     'icon': 'fas fa-code',
+    #     'url': 'https://gitee.com/tompeppa/simpleui'
+    # },
+    #     {
+    #     # 自2021.02.01+ 支持多级菜单，models 为子菜单名，理论上可以无限级
+    #     'name': '多级菜单测试',
+    #     'icon': 'fa fa-file',
+    #     'models': [{
+    #         'name': 'Baidu',
+    #         'icon': 'far fa-surprise',
+    #         'models': [
+    #             {
+    #                 'name': '爱奇艺',
+    #                 'models': [
+    #                     {'name': '视频直播'},
+    #
+    #                     {'name': 'TV直播',
+    #                      'models': [
+    #                          {'name': '视频直播'}
+    #                      ]},
+    #
+    #                 ]
+    #             }, {
+    #                 'name': '百度问答'
+    #             }
+    #         ]
+    #     }, {
+    #         'name': 'Google',
+    #         'icon': 'far fa-surprise',
+    #         'models': [{
+    #             'name': 'Youtube',
+    #             'icon': 'far fa-surprise'
+    #         }, {
+    #             'name': 'Gmail',
+    #             'icon': 'far fa-surprise'
+    #         }, {
+    #             'name': 'Search',
+    #             'url': 'https://www.google.com'
+    #         }]
+    #     }]
+    # },
+    #     {
+    #     'app': 'auth',
+    #     'name': '权限认证',
+    #     'icon': 'fas fa-user-shield',
+    #     'models': [{
+    #         'name': '用户',
+    #         'icon': 'fa fa-user',
+    #         'url': 'auth/user/'
+    #     }]
+    # },
+    #     {
+    #     'name': '测试',
+    #     'icon': 'fa fa-file',
+    #     'models': [{
+    #         'name': 'Baidu',
+    #         'url': 'http://baidu.com',
+    #         'icon': 'far fa-surprise'
+    #     }, {
+    #         'name': '内网穿透',
+    #         'url': 'https://www.wezoz.com',
+    #         'icon': 'fab fa-github'
+    #     }, {
+    #         'name': '内网穿透',
+    #         'url': 'https://www.wezoz.com',
+    #         'icon': 'fab fa-github'
+    #     }]
+    # }
+    # ]
 }
 
 # 是否显示默认图标，默认=True

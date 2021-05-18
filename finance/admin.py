@@ -14,7 +14,7 @@ class ProxyResource(resources.ModelResource):
         model = Record
 
 
-@admin.register(Layer)
+# @admin.register(Layer)
 class RecordAdmin(AjaxAdmin):
     """
     自定义按钮 弹出对话框
@@ -77,7 +77,7 @@ class RecordAdmin(AjaxAdmin):
 
 
 # Register your models here.
-@admin.register(Record)
+# @admin.register(Record)
 # class RecordAdmin(admin.ModelAdmin):
 # class RecordAdmin(ImportExportModelAdmin):
 class RecordAdmin(ImportExportActionModelAdmin, AjaxAdmin):
@@ -243,3 +243,32 @@ class RecordAdmin(ImportExportActionModelAdmin, AjaxAdmin):
             'label': '文件'
         }]
     }
+
+
+@admin.register(covid)
+class covidAdmin(admin.ModelAdmin):
+    list_display = ('ResponseID',
+                    'startdate',
+                    'enddate',
+                    'first_name',
+                    'last_name',
+                    'birthday',
+                    'address',
+                    'primary_phone',
+                    'secondary_phone',
+                    'email',
+                    'type',
+                    'first_childname',
+                    'second_childname',
+                    'child_lastname',
+                    'child_dob',
+                    'cohort_id',
+                    )
+    search_fields = ('cohort_id',
+                     )
+    list_filter=(
+                 'enddate',
+                 'type',
+                 'birthday',
+
+                 )

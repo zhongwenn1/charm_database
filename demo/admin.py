@@ -12,7 +12,7 @@ from import_export.admin import ImportExportModelAdmin, ImportExportActionModelA
 
 
 # Register your models here.
-@admin.register(Department)
+# @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
     # 要显示的字段
     list_display = ('id', 'name', 'create_time')
@@ -30,7 +30,7 @@ class ImageInline(admin.TabularInline):
     model = Image
 
 
-@admin.register(Title)
+# @admin.register(Title)
 class TitleAdmin(admin.ModelAdmin):
     # 要显示的字段
     list_display = ('id', 'name')
@@ -78,7 +78,7 @@ class ProxyResource(resources.ModelResource):
         model = Employe
 
 
-@admin.register(Employe)
+# @admin.register(Employe)
 class EmployeAdmin(ImportExportActionModelAdmin,AjaxAdmin):
     resource_class = ProxyResource
     list_display = ('id', 'name', 'gender', 'phone', 'birthday', 'department', 'enable', 'create_time')
@@ -244,3 +244,24 @@ class archtrackAdmin(admin.ModelAdmin):
         'age',
         'birthday',
     )
+
+@admin.register(archallcontact)
+class archallcontactAdmin(admin.ModelAdmin):
+    list_display = ('ARCHID',
+                    'currdate',
+                    'address',
+                    'phone_num',
+                    'text_permission',
+                    'text_num',
+                    'other_phone',
+                    'other_text_permission',
+                    'email',
+                    'source',
+                    )
+    search_fields = ('ARCHID',
+                     )
+    list_filter=(
+                 'currdate',
+                 'source',
+                 'initial',
+                )

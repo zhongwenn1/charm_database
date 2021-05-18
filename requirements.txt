@@ -1,5 +1,6 @@
 Django
 django-import-export
+django-model-utils
 django-simpleui
 Pillow
 docutils
