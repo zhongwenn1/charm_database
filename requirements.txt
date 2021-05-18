@@ -1,4 +1,4 @@
-Django
+Django==2.1
 django-import-export
 django-simpleui
 Pillow
@@ -6,3 +6,4 @@ docutils
 django-mdeditor
 markdown
 Pygments
+django-model-utils
