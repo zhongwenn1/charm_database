@@ -112,7 +112,7 @@ LANGUAGE_CODE = 'en-us'
 # LANGUAGE_CODE = 'ja'
 
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -140,7 +140,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # SIMPLEUI_HOME_ICON = 'el-icon-date'
 
 # 设置simpleui 点击首页图标跳转的地址
-SIMPLEUI_INDEX = 'https://www.88cto.com'
+# SIMPLEUI_INDEX = 'https://www.88cto.com'
 
 # 首页显示服务器、python、django、simpleui相关信息
 # SIMPLEUI_HOME_INFO = False
@@ -158,12 +158,63 @@ SIMPLEUI_INDEX = 'https://www.88cto.com'
 # SIMPLEUI_LOGIN_PARTICLES = False
 
 # 让simpleui 不要收集相关信息
-SIMPLEUI_ANALYSIS = True
+SIMPLEUI_ANALYSIS = False
+
+# 'ARCH Data': 'fas fa-database',
+# 'ARCH All Contact Information': 'fas fa-address-book',
+# 'ARCH Call Note': 'fas fa-phone-square',
+# 'ARCH Survey Track': 'fas fa-poll-h',
+# 'MARCH Data': 'fas fa-database',
+# 'MARCH All Contact Information': 'fas fa-address-book',
+# 'MARCH Call Note': 'fas fa-phone-square',
+# 'MARCH Contact Survey': 'fas fa-poll-h',
+# 'COVID-19': 'fas fa-database',
+# 'COVID19 Survey': 'fas fa-poll-h'
 
 # 自定义simpleui 菜单
 SIMPLEUI_CONFIG = {
     # 在自定义菜单的基础上保留系统模块
-    # 'system_keep': True,
+    # 'system_keep': False,
+    # 'menu_display':['Authentication and Authorization', 'ARCH Data', 'MARCH Data', 'COVID-19'],
+    # 'menus': [{
+    #     'app': 'auth',
+    #     'name': 'Authentication and Authorization',
+    #     'icon': 'fas fa-user-shield',
+    #     'models': [{
+    #         'name': 'Groups',
+    #         'icon': 'fa fa-user',
+    #         'url': 'auth/user/'
+    #     }, {
+    #         'name': 'Users',
+    #         'icon': 'fa fa-user',
+    #         'url': 'auth/user/'
+    #     }]
+    # }, {
+    #     'app': 'demo',
+    #     'name': 'ARCH Data',
+    #     # 'icon': 'fas fa-code',
+    #     # 'url': 'demo/acallnote/'
+    # }, {
+    #     'name': 'MARCH Data',
+    #     # 'icon': 'fa fa-file',
+    #     'models': [{
+    #         'name': 'Baidu',
+    #         # 'url': 'http://baidu.com',
+    #         'icon': 'far fa-surprise'
+    #     }, {
+    #         'name': '内网穿透',
+    #         # 'url': 'https://www.wezoz.com',
+    #         'icon': 'fab fa-github'
+    #     }]
+    # }, {
+    #     'name': 'COVID-19',
+    #     # 'icon': 'fa fa-desktop',
+    #     'models': [{
+    #         'name': 'time.time()',
+    #         # 'url': 'http://baidu.com',
+    #         'icon': 'far fa-surprise'
+    #     }]
+    # }]
     # 'menus': [{
     #     'name': 'Simpleui',
     #     'icon': 'fas fa-code',
@@ -240,10 +291,18 @@ SIMPLEUI_CONFIG = {
 # 是否显示默认图标，默认=True
 # SIMPLEUI_DEFAULT_ICON = False
 
-# 图标设置，图标参考：
+# 图标设置，图标参考：'fas fa-user-tie', 'fab fa-apple'
 SIMPLEUI_ICON = {
-    '系统管理': 'fab fa-apple',
-    '员工管理': 'fas fa-user-tie'
+    'ARCH Data': 'fas fa-database',
+    'ARCH All Contact Information': 'fas fa-address-book',
+    'ARCH Call Note': 'fas fa-phone-square',
+    'ARCH Survey Track': 'fas fa-poll-h',
+    'MARCH Data': 'fas fa-database',
+    'MARCH All Contact Information': 'fas fa-address-book',
+    'MARCH Call Note': 'fas fa-phone-square',
+    'MARCH Contact Survey': 'fas fa-poll-h',
+    'COVID-19': 'fas fa-database',
+    'COVID19 Survey': 'fas fa-poll-h'
 }
 
 # 指定simpleui 是否以脱机模式加载静态资源，为True的时候将默认从本地读取所有资源，即使没有联网一样可以。适合内网项目
