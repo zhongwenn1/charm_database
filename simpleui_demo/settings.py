@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'demo.apps.DemoConfig',
     # 注册自己的app
-    'article',
-    'demo',
-    'finance',
+    'march',
+    'arch',
+    'covid',
     'django.contrib.admindocs',
     'mdeditor'
 ]
